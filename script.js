@@ -4,6 +4,12 @@ const result = document.getElementById('result');
 const timeText = document.getElementById('time');
 const rankText = document.getElementById('rank');
 
+// UI transform
+setTimeout(() => {
+  document.querySelector('.close').classList.add('large');
+}, 10000); // after 10 sec
+
+// fnish game trigger
 closeBtn.addEventListener('click', endGame);
 
 function endGame() {
