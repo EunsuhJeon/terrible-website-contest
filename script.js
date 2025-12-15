@@ -5,17 +5,27 @@ const result = document.getElementById('result');
 const timeText = document.getElementById('time');
 const rankText = document.getElementById('rank');
 const game = document.getElementById('game');
+const secondModal = document.querySelector('.second-modal');
 
 // UI transform
 setTimeout(() => {
   closeBox.classList.add('large');
 }, 10000); // after 10 sec
+
 setTimeout(() => {
   closeBtn.classList.add('shake');
 }, 15000); // after 15 sec
+
 setTimeout(() => {
   game.style.backgroundImage = "url(./images/puppy.webp)";
-}, 25000);
+}, 25000); // after 25 sec
+
+setTimeout(() => {
+  secondModal.classList.remove('hidden');
+}, 30000); // after 30 sec
+
+
+
 
 // fnish game trigger
 closeBtn.addEventListener('click', endGame);

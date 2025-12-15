@@ -23,15 +23,38 @@ body {
 }
 
 .modal {
-    background: #111;
     color: white;
     width: 325px;
     height: 150px;
     padding: 40px;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.modal.first-modal {
+    background: #111;
+    position: relative;
+    z-index: 10;
+}
+
+.modal.second-modal {
+    position: absolute;
+    background-color: #292828;
+    top: 50%;
+    left: 40%; 
+    z-index: 20;
+}
+
+.close-second {
+    background: none;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .modal p {
@@ -79,7 +102,6 @@ body {
     inset: 0;
     backdrop-filter: blur(8px);
     background: rgba(0,0,0,0.6);
-    /* display: flex; */
     align-items: center;
     justify-content: center;
 }
