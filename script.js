@@ -9,64 +9,95 @@ const secondModal = document.querySelector('.second-modal');
 const secondClose = secondModal.querySelector('.close-second');
 const secondComment = secondModal.querySelector('.second-comment');
 const message = document.getElementById('message');
+const timers = [];
 
 // UI transform
-setTimeout(() => {
+timers.push(setTimeout(() => {
     closeBox.classList.add('large');
-}, 5000); // after 10 sec
+}, 15000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     closeBtn.classList.add('shake');
-}, 7000); // after 15 sec
+}, 20000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     closeBox.classList.remove('large');
     closeBtn.classList.remove('shake');
-}, 9000); // after 20 sec
+}, 30000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     game.style.backgroundImage = "url(./images/puppy.webp)";
-}, 10000); // after 25 sec
+}, 35000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     game.style.backgroundImage = "url(./images/pointing.jpg)";
-}, 12000); // after 25 sec
+}, 50000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     game.style.backgroundImage = "none";
-}, 13000); // after 25 sec
+}, 60000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     secondModal.classList.remove('hidden');
-}, 15000); // after 30 sec
+}, 70000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     secondComment.textContent = 'Nothing bad will happen';
-}, 17000); // after 35 sec
+}, 75000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     secondComment.textContent = '...Probably';
-}, 19000); // after 35 sec
+}, 80000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     message.textContent = 'Wanna stop?';
-}, 24000); // after 35 sec
+}, 100000));
 
-setTimeout(() => {
+timers.push(setTimeout(() => {
     message.textContent = 'Just do it.';
     document.querySelector('.first-modal').style.zIndex = '100';
     if(document.querySelectorAll('.second-modal').length){
         for (let index = 0; index < document.querySelectorAll('.second-modal').length; index++) {
             var item = document.querySelectorAll('.second-modal')[index];
-            item.style.opacity = '0.2';
+            item.style.opacity = '0';
         }
     }
-}, 26000); // after 35 sec
+}, 105000));
+
+timers.push(setTimeout(() => {
+    message.textContent = 'Are you still here?';
+}, 120000));
+
+timers.push(setTimeout(() => {
+    message.textContent = 'But ...WHY?';
+}, 140000));
+
+timers.push(setTimeout(() => {
+    message.textContent = 'You could leave anytime.';
+}, 160000));
+
+timers.push(setTimeout(() => {
+    message.textContent = 'Most people already closed it.';
+}, 180000));
+
+timers.push(setTimeout(() => {
+    message.textContent = 'You’re really good at doing nothing.';
+}, 220000));
+
+timers.push(setTimeout(() => {
+    message.textContent = 'Still Here. Interesting.';
+}, 220000));
 
 // fnish game trigger
 closeBtn.addEventListener('click', endGame);
 
 function endGame() {
+    timers.forEach(id => {
+        clearTimeout(id);
+        clearInterval(id);
+    });
+    timers.length = 0;
+
     const elapsed = Math.floor((Date.now() - startTime) / 1000);
     timeText.textContent = `You lasted ${formatTime(elapsed)}`;
     rankText.textContent = getRank(elapsed);
