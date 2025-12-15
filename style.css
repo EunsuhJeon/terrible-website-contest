@@ -12,19 +12,26 @@ body {
 }
 
 #game {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
 }
 
 .modal {
     background: #111;
     color: white;
-    width: 320px;
+    width: 325px;
+    height: 150px;
     padding: 40px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal p {
@@ -58,9 +65,9 @@ body {
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
-    45% { transform: translateX(-1px); }
+    47% { transform: translateX(-1px); }
     50% { transform: translateX(1px); }
-    55% { transform: translateX(-1px); }
+    52% { transform: translateX(-1px); }
 }
 
 .close.shake {

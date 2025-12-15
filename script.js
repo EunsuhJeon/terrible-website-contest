@@ -4,6 +4,7 @@ const closeBox = document.querySelector('.btn-wrapper');
 const result = document.getElementById('result');
 const timeText = document.getElementById('time');
 const rankText = document.getElementById('rank');
+const game = document.getElementById('game');
 
 // UI transform
 setTimeout(() => {
@@ -12,6 +13,9 @@ setTimeout(() => {
 setTimeout(() => {
   closeBtn.classList.add('shake');
 }, 15000); // after 15 sec
+setTimeout(() => {
+  game.style.backgroundImage = "url(./images/puppy.webp)";
+}, 25000);
 
 // fnish game trigger
 closeBtn.addEventListener('click', endGame);
