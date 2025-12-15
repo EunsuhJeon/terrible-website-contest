@@ -12,74 +12,84 @@ body {
 }
 
 #game {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-}
-
-.modal {
-    color: white;
-    width: 325px;
-    height: 150px;
-    padding: 40px;
+    position: fixed;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+}
+
+.modal {
+    width: 325px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    color: black;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #808080;
+    position: relative;
 }
 
 .modal.first-modal {
-    background: #111;
-    position: relative;
+    background-color: #c0c0c0;
     z-index: 10;
+    position: relative;
 }
 
 .modal.second-modal {
+    background-color: #d0d0d0;
     position: absolute;
-    background-color: #292828;
-    top: 50%;
-    left: 40%; 
+    top: 55%;
+    left: 52%;
+    transform: translate(-50%, -50%);
     z-index: 20;
 }
 
-.close-second {
-    background: none;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    border: none;
+.title-bar {
+    background-color: #000080;
     color: white;
-    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background-color: #e0e0e0;
+    border: 1px solid #000;
+    font-weight: bold;
     cursor: pointer;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.close-btn:hover {
+    background-color: #ff0000;
+    color: #fff;
 }
 
 .modal p {
     font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    line-height: 65px;
+    flex: 1;
+}
+
+.hidden {
+    display: none;
 }
 
 .btn-wrapper{
-    position: absolute;
-    width: 13px;
-    height: 13px;
-    top: 10px;
-    right: 15px;
     transition: transform 0.3s ease;
-}
-
-.close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.close:hover {
-    opacity: 0.6;
 }
 
 .btn-wrapper.large {
@@ -93,7 +103,7 @@ body {
     52% { transform: translateX(-1px); }
 }
 
-.close.shake {
+#close.shake {
     animation: shake 2s infinite;
 }
 
@@ -104,10 +114,6 @@ body {
     background: rgba(0,0,0,0.6);
     align-items: center;
     justify-content: center;
-}
-
-.hidden {
-    display: none;
 }
 
 .result-box {

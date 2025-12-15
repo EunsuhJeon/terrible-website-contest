@@ -1,11 +1,12 @@
 const startTime = Date.now(); // load time
-const closeBtn = document.querySelector('.close');
+const closeBtn = document.getElementById('close');
 const closeBox = document.querySelector('.btn-wrapper');
 const result = document.getElementById('result');
 const timeText = document.getElementById('time');
 const rankText = document.getElementById('rank');
 const game = document.getElementById('game');
 const secondModal = document.querySelector('.second-modal');
+const secondComment = document.querySelector('.second-comment');
 
 // UI transform
 setTimeout(() => {
@@ -17,15 +18,33 @@ setTimeout(() => {
 }, 15000); // after 15 sec
 
 setTimeout(() => {
+    closeBox.classList.remove('large');
+    closeBtn.classList.remove('shake');
+}, 20000); // after 20 sec
+
+setTimeout(() => {
   game.style.backgroundImage = "url(./images/puppy.webp)";
 }, 25000); // after 25 sec
 
 setTimeout(() => {
+  game.style.backgroundImage = "url(./images/pointing.jpg)";
+}, 27000); // after 25 sec
+
+setTimeout(() => {
+  game.style.backgroundImage = "none";
+}, 30000); // after 25 sec
+
+setTimeout(() => {
   secondModal.classList.remove('hidden');
-}, 30000); // after 30 sec
+}, 32000); // after 30 sec
 
+setTimeout(() => {
+  secondComment.textContent = 'Nothing bad will happen';
+}, 35000); // after 35 sec
 
-
+setTimeout(() => {
+  secondComment.textContent = '...Probably';
+}, 40000); // after 35 sec
 
 // fnish game trigger
 closeBtn.addEventListener('click', endGame);

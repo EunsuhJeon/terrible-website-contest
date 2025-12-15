@@ -13,14 +13,20 @@
 
 <div id="game">
   <div class="modal first-modal">
-    <div class="btn-wrapper">
-        <button class="close">×</button>
+    <div class="title-bar">
+        <span>Warning!</span>
+        <div class="btn-wrapper">
+            <button id="close" class="close-btn">×</button>
+        </div>
     </div>
     <p>Don’t close this.</p>
   </div>
   <div class="modal second-modal hidden">
-    <button class="close-second">×</button>
-    <p>You can close this.</p>
+    <div class="title-bar">
+        <span>Guess What?</span>
+        <button class="close-btn">×</button>
+    </div>
+    <p class="second-comment">You can close this.</p>
   </div>
 </div>
 
