@@ -1,13 +1,17 @@
 const startTime = Date.now(); // load time
 const closeBtn = document.querySelector('.close');
+const closeBox = document.querySelector('.btn-wrapper');
 const result = document.getElementById('result');
 const timeText = document.getElementById('time');
 const rankText = document.getElementById('rank');
 
 // UI transform
 setTimeout(() => {
-  document.querySelector('.close').classList.add('large');
+  closeBox.classList.add('large');
 }, 10000); // after 10 sec
+setTimeout(() => {
+  closeBtn.classList.add('shake');
+}, 15000); // after 15 sec
 
 // fnish game trigger
 closeBtn.addEventListener('click', endGame);
