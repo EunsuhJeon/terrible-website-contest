@@ -6,45 +6,46 @@ const timeText = document.getElementById('time');
 const rankText = document.getElementById('rank');
 const game = document.getElementById('game');
 const secondModal = document.querySelector('.second-modal');
-const secondComment = document.querySelector('.second-comment');
+const secondClose = secondModal.querySelector('.close-second');
+const secondComment = secondModal.querySelector('.second-comment');
 
 // UI transform
 setTimeout(() => {
   closeBox.classList.add('large');
-}, 10000); // after 10 sec
+}, 5000); // after 10 sec
 
 setTimeout(() => {
   closeBtn.classList.add('shake');
-}, 15000); // after 15 sec
+}, 7000); // after 15 sec
 
 setTimeout(() => {
     closeBox.classList.remove('large');
     closeBtn.classList.remove('shake');
-}, 20000); // after 20 sec
+}, 9000); // after 20 sec
 
 setTimeout(() => {
   game.style.backgroundImage = "url(./images/puppy.webp)";
-}, 25000); // after 25 sec
+}, 10000); // after 25 sec
 
 setTimeout(() => {
   game.style.backgroundImage = "url(./images/pointing.jpg)";
-}, 27000); // after 25 sec
+}, 12000); // after 25 sec
 
 setTimeout(() => {
   game.style.backgroundImage = "none";
-}, 30000); // after 25 sec
+}, 13000); // after 25 sec
 
 setTimeout(() => {
   secondModal.classList.remove('hidden');
-}, 32000); // after 30 sec
+}, 15000); // after 30 sec
 
 setTimeout(() => {
   secondComment.textContent = 'Nothing bad will happen';
-}, 35000); // after 35 sec
+}, 17000); // after 35 sec
 
 setTimeout(() => {
   secondComment.textContent = '...Probably';
-}, 40000); // after 35 sec
+}, 19000); // after 35 sec
 
 // fnish game trigger
 closeBtn.addEventListener('click', endGame);
@@ -77,3 +78,31 @@ function getRank(seconds) {
     else 
         return 'Why Are You Still Here';
 }
+
+// second modal close click event
+function spawnMultipleModals(count, delay) {
+    for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+        const newModal = document.createElement('div');
+        newModal.classList.add('modal', 'second-modal');
+        newModal.innerHTML = `
+            <div class="title-bar">
+            <span>¯\\_(ツ)_/¯</span>
+            <button class="close-btn">×</button>
+            </div>
+            <p>Nice try!</p>
+        `;
+
+        newModal.style.top = `${50 + Math.random() * 20}%`;
+        newModal.style.left = `${40 + Math.random() * 20}%`;
+        newModal.style.transform = 'translate(-50%, -50%)';
+
+        game.appendChild(newModal);
+
+        }, i * delay);
+    }
+}
+
+secondClose.addEventListener('click', () => {
+    spawnMultipleModals(10, 200);
+});
