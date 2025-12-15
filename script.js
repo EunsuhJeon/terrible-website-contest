@@ -8,14 +8,15 @@ const game = document.getElementById('game');
 const secondModal = document.querySelector('.second-modal');
 const secondClose = secondModal.querySelector('.close-second');
 const secondComment = secondModal.querySelector('.second-comment');
+const message = document.getElementById('message');
 
 // UI transform
 setTimeout(() => {
-  closeBox.classList.add('large');
+    closeBox.classList.add('large');
 }, 5000); // after 10 sec
 
 setTimeout(() => {
-  closeBtn.classList.add('shake');
+    closeBtn.classList.add('shake');
 }, 7000); // after 15 sec
 
 setTimeout(() => {
@@ -24,28 +25,43 @@ setTimeout(() => {
 }, 9000); // after 20 sec
 
 setTimeout(() => {
-  game.style.backgroundImage = "url(./images/puppy.webp)";
+    game.style.backgroundImage = "url(./images/puppy.webp)";
 }, 10000); // after 25 sec
 
 setTimeout(() => {
-  game.style.backgroundImage = "url(./images/pointing.jpg)";
+    game.style.backgroundImage = "url(./images/pointing.jpg)";
 }, 12000); // after 25 sec
 
 setTimeout(() => {
-  game.style.backgroundImage = "none";
+    game.style.backgroundImage = "none";
 }, 13000); // after 25 sec
 
 setTimeout(() => {
-  secondModal.classList.remove('hidden');
+    secondModal.classList.remove('hidden');
 }, 15000); // after 30 sec
 
 setTimeout(() => {
-  secondComment.textContent = 'Nothing bad will happen';
+    secondComment.textContent = 'Nothing bad will happen';
 }, 17000); // after 35 sec
 
 setTimeout(() => {
-  secondComment.textContent = '...Probably';
+    secondComment.textContent = '...Probably';
 }, 19000); // after 35 sec
+
+setTimeout(() => {
+    message.textContent = 'Wanna stop?';
+}, 24000); // after 35 sec
+
+setTimeout(() => {
+    message.textContent = 'Just do it.';
+    document.querySelector('.first-modal').style.zIndex = '100';
+    if(document.querySelectorAll('.second-modal').length){
+        for (let index = 0; index < document.querySelectorAll('.second-modal').length; index++) {
+            var item = document.querySelectorAll('.second-modal')[index];
+            item.style.opacity = '0.2';
+        }
+    }
+}, 26000); // after 35 sec
 
 // fnish game trigger
 closeBtn.addEventListener('click', endGame);

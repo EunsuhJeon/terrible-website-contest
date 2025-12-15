@@ -12,31 +12,32 @@
 <body>
 
 <div id="game">
-  <div class="modal first-modal">
-    <div class="title-bar">
-        <span>Warning!</span>
-        <div class="btn-wrapper">
-            <button id="close" class="close-btn">×</button>
+    <h2 id="message"></h2>
+    <div class="modal first-modal">
+        <div class="title-bar">
+            <span>Warning!</span>
+            <div class="btn-wrapper">
+                <button id="close" class="close-btn">×</button>
+            </div>
         </div>
+        <p>Don’t close this.</p>
     </div>
-    <p>Don’t close this.</p>
-  </div>
-  <div class="modal second-modal hidden">
-    <div class="title-bar">
-        <span>Guess What?</span>
-        <button class="close-btn close-second">×</button>
+    <div class="modal second-modal hidden">
+        <div class="title-bar">
+            <span>Guess What?</span>
+            <button class="close-btn close-second">×</button>
+        </div>
+        <p class="second-comment">You can close this.</p>
     </div>
-    <p class="second-comment">You can close this.</p>
-  </div>
 </div>
 
 <div id="result" class="hidden">
-  <div class="result-box">
-    <h1>You failed.</h1>
-    <p id="time"></p>
-    <p id="rank"></p>
-    <p class="small">You could have stayed longer.</p>
-  </div>
+    <div class="result-box">
+        <h1>You failed.</h1>
+        <p id="time"></p>
+        <p id="rank"></p>
+        <p class="small">You could have stayed longer.</p>
+    </div>
 </div>
 
 <script src="script.js"></script>

@@ -22,6 +22,13 @@ body {
     background-position: center;
 }
 
+#prompt {
+    position: absolute;
+    top: 20%;
+    color: white;
+    font-size: 50px;
+}
+
 .modal {
     width: 325px;
     height: 150px;
@@ -48,6 +55,7 @@ body {
     left: 52%;
     transform: translate(-50%, -50%);
     z-index: 20;
+    transition: opacity 1.5s ease;
 }
 
 .title-bar {
