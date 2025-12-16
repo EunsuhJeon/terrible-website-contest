@@ -151,3 +151,17 @@ body {
     font-size: 16px;
     opacity: 0.6;
 }
+
+#retry {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+#retry:hover{
+    text-decoration: underline;
+}

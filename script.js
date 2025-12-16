@@ -9,6 +9,7 @@ const secondModal = document.querySelector('.second-modal');
 const secondClose = secondModal.querySelector('.close-second');
 const secondComment = secondModal.querySelector('.second-comment');
 const message = document.getElementById('message');
+const retryBtn = document.getElementById('retry');
 const timers = [];
 
 // UI transform
@@ -152,4 +153,8 @@ function spawnMultipleModals(count, delay) {
 
 secondClose.addEventListener('click', () => {
     spawnMultipleModals(10, 200);
+});
+
+retryBtn.addEventListener('click', () => {
+    location.reload();
 });
